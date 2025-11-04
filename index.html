@@ -8,21 +8,23 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      color: white;
+      background-color: #000;
     }
 
-    /* Hero Section */
+    /* HERO SECTION */
     .hero {
-      background-image: url('https://www.discoveryshoresboracay.com/wp-content/uploads/2019/09/DSB-Aerial-View-2.jpg');
-      background-size: cover;
-      background-position: center;
       height: 100vh;
+      background-image: url('https://boracaybeachradio.com/wp-content/uploads/2019/10/boracay-beach-sunset.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      flex-direction: column;
       text-align: center;
       position: relative;
     }
@@ -30,9 +32,12 @@
     .hero::after {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 0;
     }
 
     .hero-content {
@@ -40,80 +45,72 @@
       z-index: 1;
     }
 
-    /* Section Titles */
-    h2 {
+    .hero h1 {
+      font-size: 4rem;
       font-weight: bold;
-      color: #00796b;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     }
 
-    /* Card Styling */
-    .card img {
-      height: 220px;
-      object-fit: cover;
+    .hero p {
+      font-size: 1.5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     }
 
-    /* Footer */
+    .btn-discover {
+      background-color: #ffb300;
+      color: #000;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-discover:hover {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    /* ABOUT SECTION */
+    #about {
+      background-color: #f8f9fa;
+      color: #333;
+      padding: 60px 0;
+    }
+
+    /* FOOTER */
     footer {
       background-color: #004d40;
       color: white;
-      padding: 30px 0;
+      padding: 20px 0;
       text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <h1 class="display-4 fw-bold">Welcome to Boracay Island 🏝️</h1>
-      <p class="lead">The Jewel of the Philippines</p>
-      <a href="#about" class="btn btn-light btn-lg mt-3">Discover More</a>
+      <h1>Welcome to Boracay Island 🏝️</h1>
+      <p>Experience paradise in the heart of the Philippines</p>
+      <a href="#about" class="btn-discover">Discover More</a>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="container my-5">
-    <h2 class="text-center">About Boracay</h2>
-    <p class="text-center">Boracay Island is world-famous for its stunning white sand beaches, crystal-clear waters, and vibrant nightlife. It’s a tropical paradise that offers both relaxation and adventure for travelers from all over the world.</p>
-  </section>
-
-  <!-- Activities Section -->
-  <section id="activities" class="container my-5">
-    <h2 class="text-center">Top Things To Do</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card shadow">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="card-img-top" alt="White Beach">
-          <div class="card-body">
-            <h5 class="card-title">Relax at White Beach</h5>
-            <p class="card-text">Experience the world-famous powdery white sands and clear turquoise waters.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" class="card-img-top" alt="Island Hopping">
-          <div class="card-body">
-            <h5 class="card-title">Go Island Hopping</h5>
-            <p class="card-text">Explore nearby islands and hidden beaches for a true adventure.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="card-img-top" alt="Watersports">
-          <div class="card-body">
-            <h5 class="card-title">Try Watersports</h5>
-            <p class="card-text">Enjoy parasailing, scuba diving, and jet skiing with a view of paradise.</p>
-          </div>
-        </div>
-      </div>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="text-center">
+    <div class="container">
+      <h2>About Boracay</h2>
+      <p>Boracay is famous for its powdery white sand beaches and breathtaking sunsets. A tropical paradise offering relaxation, adventure, and unforgettable memories.</p>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Boracay Island | Designed by Paul Christian Dimaculangan</p>
   </footer>
