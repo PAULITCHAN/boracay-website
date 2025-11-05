@@ -1,123 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boracay Paradise</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      background-color: #000;
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boracay Island, Philippines</title>
 
-    /* 🌅 Background section */
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* basic layout */
+    html, body { height: 100%; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+    body { color: white; background-color: #000; scroll-behavior: smooth; padding-top: 56px; /* space for fixed navbar */ }
+
+    /* NAVBAR */
+    .navbar-brand { font-weight: 700; }
+    .navbar-dark .navbar-nav .nav-link { color: rgba(255,255,255,0.9); }
+    .navbar-dark .navbar-nav .nav-link:hover { color: #ffd54a; }
+
+    /* HERO */
     .hero {
-      background-image: url('https://visitphilippines.ph/upload/top-destination/Boracay.jpg');
+      height: calc(100vh - 56px);
+      background-image: url('https://boracaybeachradio.com/wp-content/uploads/2019/10/boracay-beach-sunset.jpg');
       background-size: cover;
       background-position: center;
-      height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      color: white;
       position: relative;
     }
-
-    .hero::before {
+    .hero::after {
       content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.4);
     }
+    .hero-content { position: relative; z-index: 2; max-width: 1000px; padding: 30px; }
+    .hero h1 { font-size: 3.2rem; font-weight: 800; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); margin-bottom: .5rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.6); }
+    .btn-discover { background-color: #ffb300; color: #000; border-radius: 30px; padding: .7rem 1.4rem; font-weight:700; }
 
-    .hero h1, .hero p {
-      position: relative;
-      z-index: 1;
-    }
+    /* SECTIONS */
+    section { padding: 60px 0; }
+    #about { background: #f8f9fa; color: #333; }
+    #activities { background: #ffffff; color: #333; }
+    #contact { background: #e8f5e9; color: #122; }
 
-    /* 🌴 About Section */
-    .about-section {
-      padding: 80px 20px;
-      background: #f8f9fa;
-      color: #333;
-      text-align: center;
-    }
+    /* Activities grid */
+    .activity img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; transition: transform .25s ease; }
+    .activity img:hover { transform: scale(1.04); }
+    .activity h5 { margin-top: .75rem; font-weight:700; }
+    .lead { color: inherit; }
 
-    .about-section h2 {
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #0077b6;
-    }
-
-    .about-section p {
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.7;
-      font-size: 18px;
-    }
-
-    /* 🧭 Navbar */
-    .navbar {
-      background-color: rgba(0, 0, 0, 0.8) !important;
-    }
-
-    .navbar-brand, .nav-link {
-      color: white !important;
-      font-weight: 500;
-    }
-
-    .nav-link:hover {
-      color: #00b4d8 !important;
+    /* footer */
+    footer { background: #004d40; color: #fff; padding: 20px 0; text-align: center; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .hero { height: auto; padding: 60px 0; }
     }
   </style>
 </head>
 <body>
-  <!-- 🌴 Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Boracay Paradise</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand" href="#hero">Boracay 🌴</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- 🌅 Hero Section -->
-  <section class="hero">
-    <h1>Welcome to Boracay</h1>
-    <p>Experience paradise in the heart of the Philippines.</p>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Boracay Island 🏝️</h1>
+      <p>The Jewel of the Philippines — powdery white sand, crystal waters, and unforgettable sunsets.</p>
+      <a href="#activities" class="btn btn-discover">Discover Activities</a>
+    </div>
   </section>
 
-  <!-- 🏖️ About Section -->
-  <section class="about-section" id="about">
+  <!-- ABOUT -->
+  <section id="about" class="text-center">
     <div class="container">
-      <h2>About Boracay</h2>
-      <p>
-        Boracay is famous for its powdery white sand beaches and breathtaking sunsets.
-        A tropical paradise offering relaxation, adventure, and unforgettable memories.
-        Whether you’re here to unwind, try water sports, or explore island life, Boracay
-        welcomes you with warmth and beauty that stays in your heart forever.
+      <h2 style="color:#00796b; font-weight:800;">About Boracay</h2>
+      <p class="lead mx-auto" style="max-width:900px; color:#555;">
+        Nestled in the province of Aklan, Boracay is renowned for its powdery white sand beaches, crystal-clear waters, and breathtaking sunsets.
+        Once a quiet fishing village, it is now one of Asia’s top tropical destinations, offering both relaxing resorts and thrilling activities.
+      </p>
+
+      <p class="mx-auto" style="max-width:900px; color:#555;">
+        The island is also a success story in sustainable tourism after a major rehabilitation. Today it balances natural beauty with responsible travel.
       </p>
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ACTIVITIES -->
+  <section id="activities">
+    <div class="container">
+      <h2 class="text-center" style="color:#00796b; font-weight:800;">Top Activities</h2>
+      <p class="text-center lead mb-5" style="color:#666;">Paraw sailing, island hopping, snorkeling, vibrant nightlife and more — Boracay has something for everyone.</p>
+
+      <div class="row g-4">
+        <div class="col-md-4 activity">
+          <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/0a/5f/c3.jpg" alt="Paraw Sailing">
+          <h5>Paraw Sailing</h5>
+          <p>Enjoy a peaceful sunset cruise on a traditional Filipino sailboat called a “paraw.”</p>
+        </div>
+
+        <div class="col-md-4 activity">
+          <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_2848,h_1839/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/tq8ooxe3wfjrvldrsyrc/BoracayPrivateIslandHopping-KlookPhilippines.jpg" alt="Island Hopping">
+          <h5>Island Hopping</h5>
+          <p>Explore nearby islands, snorkel in crystal-clear waters, and discover hidden beaches.</p>
+        </div>
+
+        <div class="col-md-4 activity">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Iz7NlxJXf6Ptvtw34KPeLt3Gi6iexT8KPA&s" alt="Nightlife">
+          <h5>Vibrant Nightlife</h5>
+          <p>Experience beach bars, fire dancing, and live music along Boracay’s lively shores.</p>
+        </div>
+
+        <div class="col-md-4 activity">
+          <img src="https://i0.wp.com/blog.bambatravel.com/wp-content/uploads/2024/12/filipino-food.jpg?fit=1920%2C1080&ssl=1" alt="Local Food">
+          <h5>Local Cuisine</h5>
+          <p>Indulge in seafood feasts and Filipino favorites like grilled squid and mango shakes.</p>
+        </div>
+
+        <div class="col-md-4 activity">
+          <img src="https://dk3o9cokdi9xs.cloudfront.net/boracay-activities/wp-content/uploads/2024/07/29103909/2Z0A1939_webp1400x955-768x512.webp" alt="Water Sports">
+          <h5>Water Sports</h5>
+          <p>Go jet skiing, paddle boarding, or parasailing for an unforgettable thrill.</p>
+        </div>
+
+        <div class="col-md-4 activity">
+          <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/87/da/f0.jpg" alt="Cliff Diving">
+          <h5>Cliff Diving</h5>
+          <p>Jump into the turquoise sea at Ariel’s Point — perfect for thrill seekers!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="text-center">
+    <div class="container">
+      <h2 style="color:#00796b; font-weight:800;">Contact & Inquiries</h2>
+      <p class="lead mx-auto" style="max-width:800px; color:#555;">For bookings or questions, email <strong>boracaytravel@example.com</strong> or call <strong>+63 912 345 6789</strong>.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="mb-0">© 2025 Boracay Island | Designed by Paul Christian Dimaculangan</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (required for navbar toggler) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
