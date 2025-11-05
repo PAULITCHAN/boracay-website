@@ -79,7 +79,24 @@
     #about {
       background-color: #f8f9fa;
       color: #333;
-      padding: 60px 0;
+      padding: 80px 0;
+    }
+
+    #about h2 {
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .activity img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .activity img:hover {
+      transform: scale(1.05);
     }
 
     /* FOOTER */
@@ -102,28 +119,53 @@
     </div>
   </section>
 
- <section id="about" class="text-center">
-  <div class="container">
-    <h2>About Boracay</h2>
-    <p>
-      Nestled in the province of Aklan, Boracay is a small island in the Philippines renowned for its
-      <strong>powdery white sand</strong> beaches, crystal-clear waters, and breathtaking sunsets. Once a quiet fishing
-      village, Boracay has become one of Asia’s most popular tropical destinations, attracting millions of visitors each year.
-    </p>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="text-center">
+    <div class="container">
+      <h2>Discover Boracay Activities</h2>
+      <p class="lead mb-5">Boracay is more than just white sand and sunsets — it’s a tropical adventure waiting to be explored!</p>
 
-    <p>
-      Beyond its natural beauty, Boracay offers a vibrant mix of activities — from <strong>island hopping</strong> and
-      <strong>scuba diving</strong> to <strong>kite surfing</strong> and <strong>sunset sailing</strong>. Its bustling
-      beachside bars, world-class resorts, and local cuisine make every traveler’s experience unforgettable.
-    </p>
+      <div class="row g-4">
+        <div class="col-md-4 activity">
+          <img src="https://cdn.theculturetrip.com/wp-content/uploads/2021/09/boracay-paraw-sailing-shutterstock_1725910345.jpg" alt="Paraw Sailing">
+          <h5 class="mt-3">Paraw Sailing</h5>
+          <p>Enjoy a peaceful sunset cruise on a traditional Filipino sailboat called a “paraw.”</p>
+        </div>
 
-    <p>
-      The island is also a model for <strong>sustainable tourism</strong> after undergoing a major environmental
-      rehabilitation. Today, Boracay stands as a symbol of how nature and tourism can coexist when protected and respected.
-    </p>
-  </div>
-</section>
+        <div class="col-md-4 activity">
+          <img src="https://gttp.imgix.net/416238/x/0/island-hopping-in-boracay.jpg" alt="Island Hopping">
+          <h5 class="mt-3">Island Hopping</h5>
+          <p>Explore nearby islands, snorkel in crystal-clear waters, and discover hidden beaches.</p>
+        </div>
 
+        <div class="col-md-4 activity">
+          <img src="https://www.travelinglifestyle.net/wp-content/uploads/2022/06/boracay-nightlife-1.jpg" alt="Nightlife">
+          <h5 class="mt-3">Vibrant Nightlife</h5>
+          <p>Experience beach bars, fire dancing, and live music along Boracay’s lively shores.</p>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-4">
+        <div class="col-md-4 activity">
+          <img src="https://www.zenrooms.com/blog/wp-content/uploads/2019/05/Food-Boracay.jpg" alt="Local Food">
+          <h5 class="mt-3">Local Cuisine</h5>
+          <p>Indulge in seafood feasts and Filipino favorites like grilled squid and mango shakes.</p>
+        </div>
+
+        <div class="col-md-4 activity">
+          <img src="https://media.timeout.com/images/105841126/image.jpg" alt="Water Sports">
+          <h5 class="mt-3">Water Sports</h5>
+          <p>Go jet skiing, paddle boarding, or parasailing for an unforgettable thrill.</p>
+        </div>
+
+        <div class="col-md-4 activity">
+          <img src="https://boracaycompass.com/wp-content/uploads/2017/02/ariels-point-cliff-diving.jpg" alt="Cliff Diving">
+          <h5 class="mt-3">Cliff Diving</h5>
+          <p>Jump into the turquoise sea at Ariel’s Point — perfect for thrill seekers!</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
