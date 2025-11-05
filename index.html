@@ -3,93 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boracay Island</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <title>Boracay Paradise</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background-color: #000;
     }
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      position: absolute;
-      width: 100%;
-      top: 0;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav ul li a:hover {
-      color: #ffcc00;
-    }
+
+    /* 🌅 Background section */
     .hero {
-      background-image: url('images/boracay-bg.jpg');
+      background-image: url('https://visitphilippines.ph/upload/top-destination/Boracay.jpg');
       background-size: cover;
       background-position: center;
-      height: 90vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
       color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 🌴 About Section */
+    .about-section {
+      padding: 80px 20px;
+      background: #f8f9fa;
+      color: #333;
       text-align: center;
     }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+
+    .about-section h2 {
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #0077b6;
     }
-    .hero p {
-      font-size: 1.2rem;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+
+    .about-section p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-size: 18px;
     }
-    footer {
-      background-color: #004d40;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 0;
+
+    /* 🧭 Navbar */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .navbar-brand, .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #00b4d8 !important;
     }
   </style>
 </head>
 <body>
+  <!-- 🌴 Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Boracay Paradise</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="activities.html">Activities</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
+  <!-- 🌅 Hero Section -->
   <section class="hero">
-    <h1>Welcome to Boracay Island 🌴</h1>
-    <p>The Jewel of the Philippines — powdery white sand, crystal waters, and unforgettable sunsets.</p>
+    <h1>Welcome to Boracay</h1>
+    <p>Experience paradise in the heart of the Philippines.</p>
   </section>
 
-  <footer>
-    © 2025 Boracay Island | Designed by Paul Christian Dimaculangan
-  </footer>
+  <!-- 🏖️ About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2>About Boracay</h2>
+      <p>
+        Boracay is famous for its powdery white sand beaches and breathtaking sunsets.
+        A tropical paradise offering relaxation, adventure, and unforgettable memories.
+        Whether you’re here to unwind, try water sports, or explore island life, Boracay
+        welcomes you with warmth and beauty that stays in your heart forever.
+      </p>
+    </div>
+  </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
